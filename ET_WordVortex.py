@@ -1,5 +1,10 @@
 word = raw_input("Enter a word")
-for i in range(len(word + word[-2:-len(word)-1:-1])):
-    for j in range((len(word + word[-2:-len(word)-1:-1]))):
-        print word[i],
+vortex = len(word + word[-2:-len(word)-1:-1])
+wordv=word + word[-2:-len(word)-1:-1]
+wordlist = []
+for i in wordv:
+    wordlist.append(i)
+for i in range(vortex):
+    for j in range(vortex):
+        print wordlist[i],
     print
