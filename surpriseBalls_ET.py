@@ -3,7 +3,7 @@ import random
 import pygame
 
 
-class Ball:
+class Ball:  # Allows for a LOT of stored variables.
     def __init__(self):
         self.x = 0
         self.y = 0
@@ -13,7 +13,7 @@ class Ball:
         self.size = 0
 
 
-def setBallPos():
+def setBallPos():  #Cretes and randomizes ball.
     newBall = Ball()
     newBall.size = random.randint(5, 30)
     newBall.x = random.randrange(newBall.size, screenW - newBall.size)
@@ -30,7 +30,7 @@ screenW = 1280
 screenH = 720
 size = [screenW, screenH]
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption("The Ball Pit")
+pygame.display.set_caption("The Ball Pit")  #Sets program windoe nsme
 
 clock = pygame.time.Clock()
 ballList = []
@@ -55,7 +55,7 @@ while running:
             ball.speedY *= -1
     screen.fill((255, 255, 255))
     for ball in ballList:
-        pygame.draw.circle(screen, ball.color, [ball.x, ball.y], ball.size)
-    clock.tick(120)
+        pygame.draw.circle(screen, ball.color, [ball.x, ball.y], ball.size)  # Makes the ball each tick.
+    clock.tick(120)  #Runs at 120fps! Super smooth!
     pygame.display.flip()
 pygame.quit()
